@@ -20,7 +20,7 @@ const AccordionSort = ({
   return (
     <div className="relative overflow-visible" ref={accordionSortRef}>
       <div
-        className={`text-lg flex gap-4 justify-center place-items-center cursor-pointer hover:bg-gray-300 py-2 px-4 rounded-lg ${
+        className={`text-lg flex gap-2 py-2 px-3 rounded-full justify-center place-items-center cursor-pointer hover:bg-gray-300  ${
           selectCardSort ? "bg-gray-300" : ""
         } cursor-pointer`}
         onClick={() => setSelectCardSort(!selectCardSort)}
@@ -31,7 +31,7 @@ const AccordionSort = ({
 
       <div
         className={`absolute left-0 top-[50px] border rounded-lg z-10 drop-shadow-sm 
-      transition-all duration-300 ease-in-out ${
+      transition-all duration-300 ease-in-out bg-white ${
         selectCardSort ? "opacity-100" : "opacity-0"
       } `}
       >

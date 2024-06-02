@@ -9,8 +9,10 @@ const Layout = () => {
       <Navbar />
       <div className="flex overflow-hidden h-screen ">
         <NavLinks />
-        <div className="flex-1 border-t  border-gray-300 p-3  overflow-auto ">
-          <Outlet />
+        <div className="flex-1 border-t border-gray-300 p-4 ">
+          <div className="max-w-[1280px] mx-auto overflow-auto ">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
