@@ -12,7 +12,6 @@ const AccordionSort = ({
   useEffect(() => {
     if (type != "sort") return;
     document.addEventListener("mousedown", (event) => {
-      console.log(type);
       let menuRef: any = accordionSortRef.current;
       if (!menuRef.contains(event.target)) setSelectCardSort(false);
     });
@@ -40,7 +39,10 @@ const AccordionSort = ({
           className={`flex gap-4 p-4  cursor-pointer ${
             cardSort == "Following" ? "bg-gray-300" : " hover:bg-gray-100 "
           }`}
-          onClick={() => setCardSort("Following")}
+          onClick={() => {
+            setCardSort("Following");
+            setSelectCardSort(false);
+          }}
         >
           <span>Following</span>
         </div>
@@ -49,7 +51,10 @@ const AccordionSort = ({
           className={`flex gap-4 p-4 cursor-pointer ${
             cardSort == "All" ? "bg-gray-300" : " hover:bg-gray-100 "
           }`}
-          onClick={() => setCardSort("All")}
+          onClick={() => {
+            setCardSort("All");
+            setSelectCardSort(false);
+          }}
         >
           <span>All</span>
         </div>

@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex gap-4 overflow-visible ">
+      <div className="flex gap-4 overflow-visible">
         <AccordionSort
           cardSort={cardSort}
           setCardSort={setCardSort}
@@ -34,10 +34,37 @@ const Home = () => {
         />
       </div>
 
-      <div className="flex justify-between gap-2">
-        <CardPost />
-        <div className="min-w-[400px] bg-gray-200 rounded-lg h-[900px]">
-          wgwgwg
+      <div className="flex ">
+        <div className="flex-1 h-screen mt-4">
+          <div className="w-full overflow-auto h-5/6 ">
+            <div className="flex flex-col gap-2 ">
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+              <div className="border border-t border-gray-300 " />
+              <CardPost />
+            </div>
+          </div>
+        </div>
+        <div className="flex gap-2 h-screen">
+          <div className="min-w-[400px] bg-gray-200 overflow-auto h-5/6 rounded-lg p-4 scrollbar-invisible ">
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+            <div className="h-[200px]">THIS IS THE RIGHT CONTAINER</div>
+          </div>
         </div>
       </div>
 

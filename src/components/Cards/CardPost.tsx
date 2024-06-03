@@ -3,8 +3,8 @@ import React from "react";
 const CardPost = () => {
   return (
     <>
-      <div className="px-4 pb-4 my-4 flex-1 flex flex-col gap-2 border-t  border-gray-300 hover:bg-gray-100 h-fit">
-        <div className="flex justify-between mt-2   ">
+      <div className="p-4 flex mb-4 flex-col gap-2  hover:bg-gray-100 h-fit rounded-lg ">
+        <div className="flex justify-between">
           <div className="flex place-items-center gap-2">
             <img
               src=""

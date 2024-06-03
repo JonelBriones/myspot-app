@@ -12,9 +12,7 @@ const AccordionView = ({
 }: any) => {
   useEffect(() => {
     if (type != "view") return;
-
     document.addEventListener("mousedown", (event) => {
-      console.log(type);
       let menuRef: any = accordionRef.current;
       if (!menuRef.contains(event.target)) setSelectCardView(false);
     });
@@ -46,7 +44,10 @@ const AccordionView = ({
           className={`flex gap-4 p-4  cursor-pointer ${
             cardView ? "bg-gray-300" : " hover:bg-gray-100 "
           }`}
-          onClick={() => setCardView(true)}
+          onClick={() => {
+            setCardView(true);
+            setSelectCardView(false);
+          }}
         >
           <LuRectangleHorizontal size={"1.5rem"} />
           <span>Card</span>
@@ -55,7 +56,10 @@ const AccordionView = ({
           className={`flex gap-4 p-4 cursor-pointer ${
             !cardView ? "bg-gray-300" : " hover:bg-gray-100 "
           }`}
-          onClick={() => setCardView(false)}
+          onClick={() => {
+            setCardView(false);
+            setSelectCardView(false);
+          }}
         >
           <BsViewStacked size={"1.5rem"} />
           <span>Component</span>

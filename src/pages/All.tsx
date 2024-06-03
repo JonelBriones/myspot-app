@@ -3,7 +3,7 @@ import React from "react";
 const All = () => {
   return (
     <div>
-      <h1>All</h1>
+      <h1>All - BUILDING IN PROCESS</h1>
       {/* DISPLAY All / For You Page  */}
     </div>
   );
