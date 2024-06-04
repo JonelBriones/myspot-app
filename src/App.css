@@ -26,3 +26,7 @@ a,
 ul > div {
   cursor: pointer;
 }
+.like-hover:hover,
+.dislike-hover:hover {
+  fill: red;
+}
