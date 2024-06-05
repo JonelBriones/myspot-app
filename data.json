@@ -1,15 +1,32 @@
 [
   {
     "id": "000",
-    "post": {
-      "created_at": "04-02-2024",
-      "title": "This is my first post!",
-      "text": "Breaking news!!!!",
-      "likes": ["ijonel906", "ijonel906"],
-      "dislikes": ["josh"],
-      "comments": ["Wow welcome brother!"],
-      "image": "https://source.unsplash.com/random/800x400"
-    },
+    "created_at": "04-02-2024",
+    "title": "This is my first post!",
+    "text": "Breaking news!!!!",
+    "likes": ["johnny", "jonel"],
+    "dislikes": ["josh"],
+    "comments": [
+      {
+        "created_at": "04-02-2024",
+        "text": "comment 1",
+        "from": {
+          "username": "paul",
+          "profile_image": "https://source.unsplash.com/random/50x50",
+          "id": "001"
+        }
+      },
+      {
+        "created_at": "04-02-2024",
+        "text": "comment 2",
+        "from": {
+          "username": "josh",
+          "profile_image": "https://source.unsplash.com/random/50x50",
+          "id": "002"
+        }
+      }
+    ],
+    "image": "https://source.unsplash.com/random/800x400",
     "created_by": {
       "id": "906",
       "username": "ijonel906",
@@ -18,15 +35,23 @@
   },
   {
     "id": "001",
-    "post": {
-      "created_at": "02-05-2024",
-      "title": "This is my second post!",
-      "text": "Breaking news!!!!",
-      "likes": ["paul", "paul", "paul", "paul"],
-      "dislikes": ["josh"],
-      "comments": [],
-      "image": "https://source.unsplash.com/random/300x200"
-    },
+    "created_at": "02-05-2024",
+    "title": "This is my second post!",
+    "text": "Breaking news!!!!",
+    "likes": ["paul", "jor", "jin"],
+    "dislikes": ["josh"],
+    "comments": [
+      {
+        "created_at": "04-02-2024",
+        "text": "comment 3",
+        "from": {
+          "username": "paul",
+          "profile_image": "https://source.unsplash.com/random/50x50",
+          "id": "001"
+        }
+      }
+    ],
+    "image": "https://source.unsplash.com/random/300x200",
     "created_by": {
       "id": "906",
       "username": "paul",
@@ -35,15 +60,13 @@
   },
   {
     "id": "002",
-    "post": {
-      "created_at": "09-21-2024",
-      "title": "This is my third post!",
-      "text": "Breaking news!!!!",
-      "likes": ["josh"],
-      "dislikes": ["josh"],
-      "comments": [],
-      "image": ""
-    },
+    "created_at": "09-21-2024",
+    "title": "This is my third post!",
+    "text": "Breaking news!!!!",
+    "likes": ["josh"],
+    "dislikes": ["ijonel906"],
+    "comments": [],
+    "image": "",
     "created_by": {
       "id": "906",
       "username": "josh",

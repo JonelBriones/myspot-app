@@ -30,7 +30,22 @@ const fakeRecentPost = [
     comments: 40,
   },
 ];
-const newData = data.reverse();
+
+type Post = {
+  id: string;
+  created_at: string;
+  title: string;
+  text: string;
+  likes: string[];
+  dislikes: string[];
+  comments: {}[];
+  image: string;
+  created_by: {
+    id: string;
+    username: string;
+    profile_image: string;
+  };
+};
 
 const Home = () => {
   const [cardView, setCardView] = useState(true);
@@ -42,14 +57,79 @@ const Home = () => {
   const accordionSortRef = useRef(null);
 
   const [showRecent, setShowRecent] = useState(true);
-  const [fakeData, setData] = useState<{}[]>(newData);
+  const [fakeData, setFakeData] = useState<Post[]>(data);
   const [fakeUserData, setUserData] = useState(userData);
 
   const sortByLikes = fakeData
     .map((data) => {
       return data;
     })
-    .sort((a: any, b: any) => b.post.likes.length - a.post.likes.length);
+    .sort((a: any, b: any) => b.likes.length - a.likes.length);
+
+  const like = (id: string, username: string) => {
+    let post = fakeData.find((data) => data.id == id);
+    let isLiked = post?.likes.includes(username);
+    if (isLiked) {
+      setFakeData(
+        fakeData.map((data) =>
+          data.id == id
+            ? {
+                ...data,
+                likes: data.likes.filter((name) => name != username),
+              }
+            : data
+        )
+      );
+    } else {
+      setFakeData(
+        fakeData.map((data) =>
+          data.id == id
+            ? {
+                ...data,
+                likes: [...data.likes, username],
+                dislikes: data.dislikes.filter((name) => name != username),
+              }
+            : data
+        )
+      );
+    }
+    console.log("like");
+  };
+  const dislike = (id: string, username: string) => {
+    let post = fakeData.find((data) => data.id == id);
+    let isDisliked = post?.dislikes.includes(username);
+    if (isDisliked) {
+      setFakeData(
+        fakeData.map((data) =>
+          data.id == id
+            ? {
+                ...data,
+
+                dislikes: data.dislikes.filter((name) => name != username),
+              }
+            : data
+        )
+      );
+    } else {
+      setFakeData(
+        fakeData.map((data) =>
+          data.id == id
+            ? {
+                ...data,
+
+                likes: data.likes.filter((name) => name != username),
+                dislikes: [...data.dislikes, username],
+              }
+            : data
+        )
+      );
+    }
+  };
+  const comment = (id: string) => {
+    console.log("comment");
+  };
+
+  const props = { like, dislike, comment };
 
   return (
     <div className="flex flex-col">
@@ -73,7 +153,7 @@ const Home = () => {
       </div>
 
       <div className="flex gap-2 overflow-hidden ">
-        <div className="flex flex-1 flex-col gap-2 ">
+        <div className="flex flex-1 flex-col-reverse gap-2 ">
           {cardSort !== "Hot" &&
             fakeData.map((data: any, idx) => (
               <div
@@ -81,11 +161,15 @@ const Home = () => {
                 className={`border-t border-gray-300 ${idx == 0 ? "mt-4" : ""}`}
               >
                 <>
-                  {cardSort == "All" && <CardPost data={data} />}
+                  {cardSort == "All" && (
+                    <CardPost data={data} props={props} user={fakeUserData} />
+                  )}
                   {cardSort == "Following" &&
                     fakeUserData.following.includes(
                       data.created_by.username
-                    ) && <CardPost data={data} />}
+                    ) && (
+                      <CardPost data={data} props={props} user={fakeUserData} />
+                    )}
                 </>
               </div>
             ))}
@@ -95,7 +179,7 @@ const Home = () => {
                 key={data.id}
                 className={`border-t border-gray-300 ${idx == 0 ? "mt-4" : ""}`}
               >
-                <CardPost data={data} />
+                <CardPost data={data} props={props} user={fakeUserData} />
               </div>
             ))}
         </div>
