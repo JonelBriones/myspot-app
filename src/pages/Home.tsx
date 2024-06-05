@@ -43,8 +43,13 @@ const Home = () => {
 
   const [showRecent, setShowRecent] = useState(true);
   const [fakeData, setData] = useState<{}[]>(newData);
-
   const [fakeUserData, setUserData] = useState(userData);
+
+  const sortByLikes = fakeData
+    .map((data) => {
+      return data;
+    })
+    .sort((a: any, b: any) => b.post.likes.length - a.post.likes.length);
 
   return (
     <div className="flex flex-col">
@@ -69,20 +74,30 @@ const Home = () => {
 
       <div className="flex gap-2 overflow-hidden ">
         <div className="flex flex-1 flex-col gap-2 ">
-          {fakeData.map((data: any, idx) =>
-            cardSort == "Following" ? (
-              fakeUserData.following.includes(data.created_by.username) && (
-                <CardPost data={data} />
-              )
-            ) : (
+          {cardSort !== "Hot" &&
+            fakeData.map((data: any, idx) => (
+              <div
+                key={data.id}
+                className={`border-t border-gray-300 ${idx == 0 ? "mt-4" : ""}`}
+              >
+                <>
+                  {cardSort == "All" && <CardPost data={data} />}
+                  {cardSort == "Following" &&
+                    fakeUserData.following.includes(
+                      data.created_by.username
+                    ) && <CardPost data={data} />}
+                </>
+              </div>
+            ))}
+          {cardSort == "Hot" &&
+            sortByLikes.map((data: any, idx) => (
               <div
                 key={data.id}
                 className={`border-t border-gray-300 ${idx == 0 ? "mt-4" : ""}`}
               >
                 <CardPost data={data} />
               </div>
-            )
-          )}
+            ))}
         </div>
 
         <div className="hidden 2xl:flex flex-col h-fit w-[350px] relative ">

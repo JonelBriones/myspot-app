@@ -49,7 +49,6 @@ const AccordionSort = ({
         >
           <span>Following</span>
         </div>
-
         <div
           className={`flex gap-4 p-4 cursor-pointer ${
             cardSort == "All" ? "bg-gray-300" : " hover:bg-gray-100 "
@@ -60,6 +59,17 @@ const AccordionSort = ({
           }}
         >
           <span>All</span>
+        </div>
+        <div
+          className={`flex gap-4 p-4 cursor-pointer ${
+            cardSort == "Hot" ? "bg-gray-300" : " hover:bg-gray-100 "
+          }`}
+          onClick={() => {
+            setCardSort("Hot");
+            setSelectCardSort(false);
+          }}
+        >
+          <span>Hot</span>
         </div>
       </div>
     </div>

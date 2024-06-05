@@ -5,7 +5,7 @@
       "created_at": "04-02-2024",
       "title": "This is my first post!",
       "text": "Breaking news!!!!",
-      "likes": ["jonel", "paul"],
+      "likes": ["ijonel906", "ijonel906"],
       "dislikes": ["josh"],
       "comments": ["Wow welcome brother!"],
       "image": "https://source.unsplash.com/random/800x400"
@@ -22,7 +22,7 @@
       "created_at": "02-05-2024",
       "title": "This is my second post!",
       "text": "Breaking news!!!!",
-      "likes": ["jonel", "paul"],
+      "likes": ["paul", "paul", "paul", "paul"],
       "dislikes": ["josh"],
       "comments": [],
       "image": "https://source.unsplash.com/random/300x200"
@@ -39,7 +39,7 @@
       "created_at": "09-21-2024",
       "title": "This is my third post!",
       "text": "Breaking news!!!!",
-      "likes": ["jonel", "paul"],
+      "likes": ["josh"],
       "dislikes": ["josh"],
       "comments": [],
       "image": ""
